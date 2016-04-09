@@ -2,18 +2,21 @@ import javax.swing.JOptionPane;
 import java.awt.Color;
 import org.teachingextensions.logo.Colors;
 import org.teachingextensions.logo.Tortoise;
+import org.teachingextensions.logo.Turtle.Animals;
+
 import javax.swing.JOptionPane;
 
 public class TortoiseColorChooser {
 	public static void main(String[] args) {
 Tortoise.show();
+Tortoise.setAnimal(Animals.Unicorn);
 Tortoise.setSpeed(10);
-Tortoise.setPenWidth(10);;
+Tortoise.setPenWidth(10);
 for (int j = 0; j < 5; j++) {
 	
 
 String colorchoose = JOptionPane.showInputDialog("What color would you like the tortoise to draw with");
-String shapechoose = JOptionPane.showInputDialog("What shape would you like to draw?");
+String shapechoose = JOptionPane.showInputDialog("What shape would you like to draw? (square, circle, or rectangle)");
 
 if (colorchoose.equals("red")) {
 	Tortoise.setPenColor(Color.red);
