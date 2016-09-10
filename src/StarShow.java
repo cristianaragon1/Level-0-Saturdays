@@ -1,11 +1,16 @@
+import java.awt.Color;
+import java.util.Random;
+
+import javax.print.DocFlavor.INPUT_STREAM;
+
+import org.teachingextensions.logo.Colors;
 import org.teachingextensions.logo.Tortoise;
 
 public class StarShow {
 
 	void makeStars() {
-		drawStar(6);
 		// 13. Set the speed to 8
-
+		Tortoise.setSpeed(8);
 		// 6. Make a variable to hold the X position of the Robot and set it to
 		// 10
 		int tortoiseX = 10;
@@ -13,27 +18,28 @@ public class StarShow {
 		// 950
 		int tortoiseY = 950;
 		// 8. Make a variable to hold the star size and set it to 25
-				int starSize = 25;
+		int starSize = 25;
 		// 12. Repeat the steps #19 to #18, 30 times
 		for (int i = 0; i < 30; i++) {
-		
-		// 19. Set the pen width to i
 
-		// 10. Set the X position of the robot to your X variable
-		Tortoise.setX(tortoiseX);
-		// 11. Set the Y position of the robot to your Y variable
-		Tortoise.setY(tortoiseY);
-		// 9. Call the drawStar() method with your star size variable
-		drawStar(starSize);
-		// 14. Increase the X position by star size. See Figure 2.
-
-		// 15. decrease the Y position by star size. See Figure 3.
-
-		// 16. Increase the star size by 20
-
-		// 17. Turn the robot 12 degrees
-
-		// 18. Make each star a different random color like in Figure 4.
+			// 19. Set the pen width to i
+			Tortoise.setPenWidth(i);
+			// 10. Set the X position of the robot to your X variable
+			Tortoise.setX(tortoiseX);
+			// 11. Set the Y position of the robot to your Y variable
+			Tortoise.setY(tortoiseY);
+			// 9. Call the drawStar() method with your star size variable
+			drawStar(starSize);
+			// 14. Increase the X position by star size. See Figure 2.
+			tortoiseX = tortoiseX + starSize;
+			// 15. decrease the Y position by star size. See Figure 3.
+			tortoiseY = tortoiseY - starSize;
+			// 16. Increase the star size by 20
+			starSize = starSize + 20;
+			// 17. Turn the robot 12 degrees
+			Tortoise.turn(12);
+			// 18. Make each star a different random color like in Figure 4.
+			Tortoise.setPenColor(Colors.getRandomColor());
 		}
 	}
 
